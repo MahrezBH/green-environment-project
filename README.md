@@ -1,6 +1,12 @@
 # PyGoat
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+* Ryme Selmi
+* Ahmed Tajouri
+* Yoldez Dridi
+* Aymen BEN TAIEB
+* Marwa JELLALI
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 intentionally vuln web Application Security in django.
