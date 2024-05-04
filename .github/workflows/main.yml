@@ -43,6 +43,9 @@ jobs:
       - name: Build Docker Image
         run: docker build -f Dockerfile -t myapp:latest .
 
+      - name: Log in to DockerHub
+        run: echo "${{ secrets.REPO_PWD }}" | docker login -u "${{ secrets.REPO_USER }}" --password-stdin
+
       - name: Docker Scout Scan
         run: |
           curl -fsSL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh -o install-scout.sh
@@ -53,9 +56,4 @@ jobs:
         run: docker tag myapp:latest ${{ secrets.REPO_USER }}/myapp:latest
 
       - name: Push Docker Image to DockerHub
-        uses: docker/build-push-action@v2
-        with:
-          username: ${{ secrets.REPO_USER }}
-          password: ${{ secrets.REPO_PWD }}
-          repository: myapp
-          tag_with_ref: true
+        run: docker push ${{ secrets.REPO_USER }}/myapp:latest
