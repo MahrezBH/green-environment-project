@@ -56,4 +56,5 @@ jobs:
         run: docker tag myapp:latest ${{ secrets.REPO_USER }}/myapp:latest
 
       - name: Push Docker Image to DockerHub
+        if: steps.scout_scan.outputs.scout_findings == '0'
         run: docker push ${{ secrets.REPO_USER }}/myapp:latest
